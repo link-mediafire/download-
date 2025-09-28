@@ -3,30 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etapa 8/8</title>
+  <title>Free Fire MAX - Mods & Cheats Hub</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f8f9fa;
+    * {
       margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      margin-bottom: 20px;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Moldura estilo celular */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    /* Vídeo em destaque */
+    .video-section {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .video-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
     .phone-frame {
       width: 320px;
       height: 600px;
       background: #000;
       border-radius: 40px;
       padding: 12px;
-      margin: 0 auto 25px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      margin: 0 auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
       position: relative;
     }
+
     .phone-notch {
       width: 140px;
       height: 25px;
@@ -37,6 +82,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     .phone-screen {
       width: 100%;
       height: 100%;
@@ -47,127 +93,373 @@
       align-items: center;
       justify-content: center;
     }
+
     .phone-screen iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* Apps recomendados */
-    .apps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      max-width: 600px;
-      margin: 0 auto 25px;
-    }
-    .app {
+    /* Grid de aplicativos */
+    .apps-section {
       background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-    .app:hover {
-      transform: translateY(-4px);
-    }
-    .app img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 8px;
-    }
-    .app a {
-      display: block;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
-    /* Botão próxima etapa */
-    .btn-next {
-      display: inline-block;
-      padding: 12px 22px;
-      font-size: 16px;
-      border-radius: 10px;
-      background: #ff0000;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
     }
-    .btn-next:hover {
-      background: #cc0000;
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .app-card {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card:nth-child(2) {
+      background: linear-gradient(135deg, #4834d4, #686de0);
+    }
+
+    .app-card:nth-child(3) {
+      background: linear-gradient(135deg, #00d2d3, #54a0ff);
+    }
+
+    .app-card:nth-child(4) {
+      background: linear-gradient(135deg, #ff9ff3, #f368e0);
+    }
+
+    .app-card:nth-child(5) {
+      background: linear-gradient(135deg, #feca57, #ff9ff3);
+    }
+
+    .app-card:nth-child(6) {
+      background: linear-gradient(135deg, #48dbfb, #0abde3);
+    }
+
+    .app-card:nth-child(7) {
+      background: linear-gradient(135deg, #1dd1a1, #10ac84);
+    }
+
+    .app-card:nth-child(8) {
+      background: linear-gradient(135deg, #ff6348, #e17055);
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+    }
+
+    .app-icon {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .app-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .app-description {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .app-link {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .app-link:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-frame {
+        width: 280px;
+        height: 520px;
+      }
+
+      .container {
+        padding: 0 10px;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .app-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .app-card:nth-child(1) { animation-delay: 0.1s; }
+    .app-card:nth-child(2) { animation-delay: 0.2s; }
+    .app-card:nth-child(3) { animation-delay: 0.3s; }
+    .app-card:nth-child(4) { animation-delay: 0.4s; }
+    .app-card:nth-child(5) { animation-delay: 0.5s; }
+    .app-card:nth-child(6) { animation-delay: 0.6s; }
+    .app-card:nth-child(7) { animation-delay: 0.7s; }
+    .app-card:nth-child(8) { animation-delay: 0.8s; }
+
+    /* Badge de destaque */
+    .featured-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ffd700;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-    
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1><i class="fas fa-gamepad"></i> Hack 003 Premium</h1>
+      <p>Sua central completa de mods, cheats e ferramentas para Free Fire MAX</p>
+    </div>
 
-<script>
-const SITE_LANG=\'pt\';
+    <!-- Seção do Vídeo -->
+    <div class="video-section">
+      <h2 class="video-title"><i class="fas fa-play-circle"></i> Tutorial Completo de como passar pelo o encurtador</h2>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <iframe src="https://www.youtube.com/embed/OVTSB2wRinM" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
 
-function mapLang(code){
-  if(!code) return \'en\';
-  const lang=code.split(\'-\')[0].toLowerCase();
-  const supported=[\'en\',\'es\',\'fr\',\'de\',\'it\',\'ja\',\'zh-CN\',\'zh-TW\',\'ru\',\'pt\',\'nl\',\'ko\',\'ar\'];
-  if(lang===\'zh\') return code.includes(\'TW\')||code.includes(\'HK\')?\'zh-TW\':\'zh-CN\';
-  return supported.includes(lang)?lang:\'en\';
-}
+    <!-- Seção dos Apps -->
+    <div class="apps-section">
+      <h2 class="section-title"><i class="fas fa-download"></i> Downloads Disponíveis</h2>
+      <div class="apps-grid">
+        
+        <!-- HG Cheats -->
+        <div class="app-card">
+          <div class="featured-badge">POPULAR</div>
+          <div class="app-icon">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <h3 class="app-title">HG Cheats Panel</h3>
+          <p class="app-description">Painel avançado com sistema Kill Cover para eliminar inimigos protegidos por obstáculos</p>
+          <a href="https://4br.me/Hs_cover_up_enemy" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-function detectLang(){
-  return mapLang(navigator.languages?.[0]||navigator.language||SITE_LANG);
-}
+        <!-- Mod Menu V4 -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="app-title">Mod Menu V4</h3>
+          <p class="app-description">Menu completo com AimKill automático e sistema de teletransporte avançado</p>
+          <a href="https://4br.me/Ysmteamv4" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-function setCookie(src,dst){
-  const v=`/${src}/${dst}`;
-  document.cookie=`googtrans=${v}; path=/`;
-  document.cookie=`googtrans=${v}; path=/; SameSite=None; Secure`;
-}
+        <!-- AimKill Lite -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-target"></i>
+          </div>
+          <h3 class="app-title">AimKill Lite</h3>
+          <p class="app-description">Versão otimizada do mod menu com foco em precisão e performance</p>
+          <a href="https://4br.me/Aimkill-lite" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-function googleTranslateInit(){
-  new google.translate.TranslateElement({pageLanguage:SITE_LANG,autoDisplay:false},document.createElement(\'div\'));
-}
+        <!-- Bypass VPN -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="app-title">Bypass VPN</h3>
+          <p class="app-description">Ferramenta para contornar bloqueios e restrições regionais do jogo</p>
+          <a href="https://4br.me/Bypass-vpn-dnsnet" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-(function(){
-  const userLang=detectLang();
-  if(userLang && userLang!==SITE_LANG) setCookie(SITE_LANG,userLang);
-  const s=document.createElement(\'script\');
-  s.src=\"//translate.google.com/translate_a/element.js?cb=googleTranslateInit\";
-  s.async=true;
-  document.head.appendChild(s);
-})();
-</script>
+        <!-- OBB FF MAX -->
+        <div class="app-card">
+          <div class="featured-badge">NOVO</div>
+          <div class="app-icon">
+            <i class="fas fa-archive"></i>
+          </div>
+          <h3 class="app-title">OBB FF MAX</h3>
+          <p class="app-description">Arquivo OBB atualizado para Free Fire MAX com todas as funcionalidades</p>
+          <a href="https://fir3.net/OBB_FF_MAX_zip" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-  <h1>Parte final Todos os links estão abaixo</h1>
+        <!-- P2077KNG 64 BIT -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="app-title">P2077KNG 64 BIT</h3>
+          <p class="app-description">Mod menu APK otimizado para dispositivos 64 bits com máxima performance</p>
+          <a href="https://4br.me/P2077kng" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
 
-  <!-- Vídeo dentro do mockup de celular -->
-  <div class="phone-frame">
-    <div class="phone-notch"></div>
-    <div class="phone-screen">
-      <iframe src="https://www.youtube.com/embed/OVTSB2wRinM" allowfullscreen></iframe>
+        <!-- P2077KNG 32 BIT -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-tablet-alt"></i>
+          </div>
+          <h3 class="app-title">P2077KNG 32 BIT</h3>
+          <p class="app-description">Versão compatível com dispositivos 32 bits e hardware mais antigo</p>
+          <a href="https://4br.me/P2077KNG-MULTI-APP-32-BIT" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
+
+        <!-- Headshot Only -->
+        <div class="app-card">
+          <div class="app-icon">
+            <i class="fas fa-skull"></i>
+          </div>
+          <h3 class="app-title">Headshot Only</h3>
+          <p class="app-description">Mod especializado em tiros certeiros na cabeça para eliminações instantâneas</p>
+          <a href="https://fir3.net/Painelhs100" class="app-link">
+            <i class="fas fa-download"></i> Baixar Agora
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
-  <!-- Apps Recomendados -->
-  </div>
 
-  <!-- Botão próxima etapa -->
-    
-        <a href="https://4br.me/Hs_cover_up_enemy" class="btn-next">PAINEL HG CHEATS (Kill cover) </a><br><br>
-  
-        <a href="https://4br.me/Apk_teleportffmax" class="btn-next">MOD MENU AIMKILL+ TELEPORT </a><br><br>
-                  <a href="https://4br.me/Aimkill-lite" class="btn-next">MOD MENU AIMKILL LITE</a><br><br>
-                  
-        <a href="https://4br.me/Byypass_VPN" class="btn-next">BYPASS VPN </a><br><br>
+  <script>
+    const SITE_LANG = 'pt';
 
-                  <a href="https://fir3.net/OBB_FF_MAX_zip" class="btn-next">OBB FF MAX ATUALIZADA</a><br><br>
-    <a href="https://4br.me/P2077kng" class="btn-next">MOD MENU APK P2077KNG FF MAX 64 BIT</a> <br><br>
-    
-        <a href="https://cl1ca.com/Linketapa8final" class="btn-next">MOD MENU APK P2077KNG FF MAX 32 BIT</a><br><br>
-    
-            <a href="https://fir3.net/Painelhs100" class="btn-next">MOD MENU SOMENTE HEADSHOT</a><br><br>
+    function mapLang(code) {
+      if (!code) return 'en';
+      const lang = code.split('-')[0].toLowerCase();
+      const supported = ['en', 'es', 'fr', 'de', 'it', 'ja', 'zh-CN', 'zh-TW', 'ru', 'pt', 'nl', 'ko', 'ar'];
+      if (lang === 'zh') return code.includes('TW') || code.includes('HK') ? 'zh-TW' : 'zh-CN';
+      return supported.includes(lang) ? lang : 'en';
+    }
 
-<br>
-    
+    function detectLang() {
+      return mapLang(navigator.languages?.[0] || navigator.language || SITE_LANG);
+    }
+
+    function setCookie(src, dst) {
+      const v = `/${src}/${dst}`;
+      document.cookie = `googtrans=${v}; path=/`;
+      document.cookie = `googtrans=${v}; path=/; SameSite=None; Secure`;
+    }
+
+    function googleTranslateInit() {
+      new google.translate.TranslateElement({ pageLanguage: SITE_LANG, autoDisplay: false }, document.createElement('div'));
+    }
+
+    (function() {
+      const userLang = detectLang();
+      if (userLang && userLang !== SITE_LANG) setCookie(SITE_LANG, userLang);
+      const s = document.createElement('script');
+      s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateInit";
+      s.async = true;
+      document.head.appendChild(s);
+    })();
+
+    // Adicionar efeitos de hover e animações
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.app-card');
+      
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
 
