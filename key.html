@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etapa 1/8 - Free Fire MAX</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+      position: relative; /* Necessário para o botão flutuante */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    /* Moldura estilo celular */
+    .video-section {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .video-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .phone-frame {
+      width: 320px;
+      height: 600px;
+      background: #000;
+      border-radius: 40px;
+      padding: 12px;
+      margin: 0 auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 140px;
+      height: 25px;
+      background: #111;
+      border-radius: 0 0 12px 12px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Botão próxima etapa */
+    .next-step-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-next {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+    }
+
+    .btn-next:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+    }
+
+    .btn-next i {
+      margin-right: 10px;
+      font-size: 1.4rem;
+    }
+
+    /* Botão flutuante do Telegram */
+    .telegram-float-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(45deg, #0088cc, #00aaff);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .telegram-float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 136, 204, 0.6);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+
+      .phone-frame {
+        width: 280px;
+        height: 520px;
+      }
+
+      .btn-next {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+
+      .telegram-float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header, .video-section, .next-step-section {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1><i class="fas fa-play-circle"></i> Hack 003 Premium </h1>
+      <p>Assista ao tutorial para pegar a senha/key🔑 </p>
+    </div>
+
+    <!-- Seção do Vídeo -->
+    <div class="video-section">
+      <h2 class="video-title"><i class="fas fa-video"></i> Tutorial Completo </h2>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <iframe src="https://www.youtube.com/embed/OVTSB2wRinM" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção Próxima Etapa -->
+    <div class="next-step-section">
+      <a href="https://cl1ca.com/Linkkey2" class="btn-next">
+        <i class="fas fa-arrow-right"></i> Obter senha 1/2 🔑
+      </a>
+    </div>
+  </div>
+
+  <!-- Botão flutuante do Telegram -->
+  <a href="https://t.me/+RmswvfwbDuNkOGIx" target="_blank" class="telegram-float-btn">
+    <i class="fab fa-telegram-plane"></i>
+  </a>
+
+<script>
+const SITE_LANG=\'pt\';
+
+function mapLang(code){
+  if(!code) return \'en\';
+  const lang=code.split(\'-\")[0].toLowerCase();
+  const supported=[\'en\',\'es\',\'fr\',\'de\',\'it\',\'ja\',\'zh-CN\',\'zh-TW\',\'ru\',\'pt\',\'nl\',\'ko\',\'ar\'];
+  if(lang===\'zh\') return code.includes(\'TW\')||code.includes(\'HK\')?\'zh-TW\':\'zh-CN\';
+  return supported.includes(lang)?lang:\'en\';
+}
+
+function detectLang(){
+  return mapLang(navigator.languages?.[0]||navigator.language||SITE_LANG);
+}
+
+function setCookie(src,dst){
+  const v=`/${src}/${dst}`;
+  document.cookie=`googtrans=${v}; path=/`;
+  document.cookie=`googtrans=${v}; path=/; SameSite=None; Secure`;
+}
+
+function googleTranslateInit(){
+  new google.translate.TranslateElement({pageLanguage:SITE_LANG,autoDisplay:false},document.createElement(\'div\'));
+}
+
+(function(){
+  const userLang=detectLang();
+  if(userLang && userLang!==SITE_LANG) setCookie(SITE_LANG,userLang);
+  const s=document.createElement(\'script\');
+  s.src="//translate.google.com/translate_a/element.js?cb=googleTranslateInit";
+  s.async=true;
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
+

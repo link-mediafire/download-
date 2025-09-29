@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack 003 Premium - Acesso Liberado</title>
+    <meta name="description" content="Siga os passos para liberar o acesso aos mods premium">
+    <link rel="shortcut icon" type="image/x-icon" href="https://yt3.googleusercontent.com/1Oo5Xqhkj2bQCMh8zDPxT3mD2Rh3RwhBC0d4PaHOV3bueERRifnByAYswQFb-ejUZrWpqaxJQXw=s120-c-k-c0x00ffffff-no-rj">
+    
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 25px;
+            margin: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+        }
+
+        .steps-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+            position: relative;
+        }
+
+        .steps-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            min-height: 80px;
+        }
+
+        .action-btn.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+        }
+
+        .action-btn.youtube:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+        }
+
+        .action-btn.completed {
+            background: linear-gradient(135deg, #28a745, #20c997) !important;
+            color: white !important;
+            cursor: default;
+        }
+
+        .action-btn i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .action-description {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .progress-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .progress-bar-container {
+            background: #e9ecef;
+            border-radius: 25px;
+            height: 15px;
+            overflow: hidden;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 25px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-bar.completed {
+            background: linear-gradient(90deg, #28a745, #20c997);
+        }
+
+        /* Access Button */
+        .access-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .access-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 50px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            min-width: 300px;
+            min-height: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-btn.locked {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: #e9ecef;
+            cursor: not-allowed;
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+        }
+
+        .access-btn.unlocked {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .access-btn.unlocked:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.5);
+        }
+
+        .access-btn i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0,0,0,0.1);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .steps-title {
+                font-size: 1.5rem;
+            }
+
+            .action-btn {
+                font-size: 1rem;
+                padding: 15px 20px;
+                min-height: 70px;
+            }
+
+            .access-btn {
+                font-size: 1.1rem;
+                padding: 20px 30px;
+                min-width: 250px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .action-btn {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .action-btn:nth-child(1) { animation-delay: 0.1s; }
+        .action-btn:nth-child(2) { animation-delay: 0.2s; }
+        .action-btn:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Pulse animation for locked button */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .access-btn.locked {
+            animation: pulse 2s infinite;
+        }
+
+        /* Success checkmark animation */
+        .checkmark {
+            animation: checkmarkSlide 0.5s ease;
+        }
+
+        @keyframes checkmarkSlide {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://yt3.googleusercontent.com/1Oo5Xqhkj2bQCMh8zDPxT3mD2Rh3RwhBC0d4PaHOV3bueERRifnByAYswQFb-ejUZrWpqaxJQXw=s120-c-k-c0x00ffffff-no-rj" 
+                     alt="Hack 003 Premium" class="logo">
+            </div>
+            <h1><i class="fas fa-shield-alt"></i> Hack 003 Premium</h1>
+            <p>Siga os passos abaixo para pegar a senha</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content" id="geral">
+            <h2 class="steps-title">
+                <i class="fas fa-list-check"></i> SIGA OS PASSOS
+            </h2>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons" id="botoesSociais">
+                <button class="action-btn youtube btnInicial" data-url="https://youtube.com/@hack003premium?si=5_ysj6hlIqcL0epo">
+                    <div>
+                        <i class="fab fa-youtube"></i>
+                        <span>INSCREVER-SE</span>
+                        <span class="action-description">Inscreva-se no canal e ative as notificações para não perder as atualizações </span>
+                    </div>
+                </button>
+
+                <button class="action-btn youtube btnInicial" data-url="https://youtu.be/srIMF2BMrEs?si=deX5L7A6J9y2uNnf">
+                    <div>
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>CURTIR VÍDEO</span>
+                        <span class="action-description">Deixe seu like no vídeo tutorial</span>
+                    </div>
+                </button>
+
+                <button class="action-btn youtube btnInicial" data-url="https://youtu.be/DHk30mQiS0E?si=99lZEAg0mS07G41Z">
+                    <div>
+                        <i class="fas fa-comment"></i>
+                        <span>COMENTAR</span>
+                        <span class="action-description">Deixe um comentário no vídeo</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-label">
+                    <i class="fas fa-chart-line"></i> Progresso de Liberação
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="barrinha" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Access Button -->
+            <div class="access-container" id="botaoDesbloqueio">
+                <a href="#" id="btnBloqueio" class="access-btn locked">
+                    <i class="fas fa-lock"></i>
+                    <span>SENHA BLOQUEADA</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>Página temporária de links</p>
+            <p><strong>© Copyright 2025 <span style="color: #ff6b6b;">Hack 003 Premium</span></strong></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        const SITE_LANG = 'pt';
+
+        function mapLang(code) {
+            if (!code) return 'en';
+            const lang = code.split('-')[0].toLowerCase();
+            const supported = ['en', 'es', 'fr', 'de', 'it', 'ja', 'zh-CN', 'zh-TW', 'ru', 'pt', 'nl', 'ko', 'ar'];
+            if (lang === 'zh') return code.includes('TW') || code.includes('HK') ? 'zh-TW' : 'zh-CN';
+            return supported.includes(lang) ? lang : 'en';
+        }
+
+        function detectLang() {
+            return mapLang(navigator.languages?.[0] || navigator.language || SITE_LANG);
+        }
+
+        function setCookie(src, dst) {
+            const v = `/${src}/${dst}`;
+            document.cookie = `googtrans=${v}; path=/`;
+            document.cookie = `googtrans=${v}; path=/; SameSite=None; Secure`;
+        }
+
+        function googleTranslateInit() {
+            new google.translate.TranslateElement({ pageLanguage: SITE_LANG, autoDisplay: false }, document.createElement('div'));
+        }
+
+        (function() {
+            const userLang = detectLang();
+            if (userLang && userLang !== SITE_LANG) setCookie(SITE_LANG, userLang);
+            const s = document.createElement('script');
+            s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateInit";
+            s.async = true;
+            document.head.appendChild(s);
+        })();
+
+        // Main functionality
+        $(document).ready(function() {
+            let quantosBtn = 3;
+            let completedSteps = 0;
+
+            // Show content after loading
+            setTimeout(function() {
+                $("#geral").show();
+            }, 100);
+
+            // Handle button clicks
+            $('.btnInicial').on('click', function() {
+                const url = $(this).attr('data-url');
+                const elemento = $(this);
+                const conteudoOriginal = elemento.find('span').first().text();
+
+                // Check if already clicked
+                if (elemento.hasClass('completed')) {
+                    return;
+                }
+
+                // Open URL
+                window.open(url, '_blank');
+
+                // Mark as completed after delay
+                setTimeout(function() {
+                    elemento.removeClass('btnInicial youtube');
+                    elemento.addClass('completed');
+                    
+                    // Add checkmark
+                    elemento.find('div').append('<i class="fas fa-check-circle checkmark" style="color: white; margin-left: 15px;"></i>');
+                    
+                    completedSteps++;
+                    updateProgress();
+                    
+                    if (completedSteps === 3) {
+                        unlockAccess();
+                    }
+                }, 3000);
+            });
+
+            // Update progress bar
+            function updateProgress() {
+                const percentage = (completedSteps / 3) * 100;
+                $('#barrinha').css('width', percentage + '%');
+                
+                if (completedSteps === 3) {
+                    $('#barrinha').addClass('completed');
+                }
+            }
+
+            // Unlock access
+            function unlockAccess() {
+                setTimeout(function() {
+                    const btnBloqueio = $('#btnBloqueio');
+                    btnBloqueio.removeClass('locked');
+                    btnBloqueio.addClass('unlocked');
+                    btnBloqueio.attr('href', '/key.html');
+                    btnBloqueio.html('<i class="fas fa-unlock"></i><span>SENHA LIBERADO</span>');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
+
