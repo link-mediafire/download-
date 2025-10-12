@@ -260,6 +260,76 @@
             opacity: 0.9;
         }
 
+        /* Modal Popup */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+            animation: shake 0.5s ease;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .modal-btn {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .main-content {
@@ -286,9 +356,47 @@
                 padding: 20px 30px;
                 min-width: 250px;
             }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-text {
+                font-size: 1rem;
+            }
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -342,6 +450,25 @@
 </head>
 
 <body>
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="modalAlerta">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2 class="modal-title">⚠️ ATENÇÃO! ⚠️</h2>
+            <p class="modal-text">
+                <strong>ERRO!</strong> Você só clicou no botão e não se inscreveu!<br><br>
+                Temos uma API que verifica e é <strong>NECESSÁRIO</strong>:<br><br>
+                ✅ Se inscrever no canal<br>
+                ✅ Ativar o sino 🔔<br>
+                ✅ Seguir no Instagram<br><br>
+                Para fazer o download do APK com segurança!
+            </p>
+            <button class="modal-btn" id="fecharModal">ENTENDI!</button>
+        </div>
+    </div>
+
     <!-- Header -->
     <div class="header">
         <div class="container">
@@ -453,6 +580,27 @@
             document.head.appendChild(s);
         })();
 
+        // Função para vibrar o dispositivo
+        function vibrar() {
+            if ('vibrate' in navigator) {
+                // Padrão de vibração: vibra 200ms, pausa 100ms, vibra 200ms
+                navigator.vibrate([200, 100, 200, 100, 200]);
+            }
+        }
+
+        // Mostrar modal ao carregar a página
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('modalAlerta').classList.add('active');
+                vibrar();
+            }, 500);
+        });
+
+        // Fechar modal
+        document.getElementById('fecharModal').addEventListener('click', function() {
+            document.getElementById('modalAlerta').classList.remove('active');
+        });
+
         // Main functionality
         $(document).ready(function() {
             let quantosBtn = 3;
@@ -498,7 +646,6 @@
             function updateProgress() {
                 const percentage = (completedSteps / 3) * 100;
                 $('#barrinha').css('width', percentage + '%');
-                
                 if (completedSteps === 3) {
                     $('#barrinha').addClass('completed');
                 }
@@ -510,7 +657,7 @@
                     const btnBloqueio = $('#btnBloqueio');
                     btnBloqueio.removeClass('locked');
                     btnBloqueio.addClass('unlocked');
-                    btnBloqueio.attr('href', 'https://link-mediafire.github.io/download-/erro.html');
+                    btnBloqueio.attr('href', 'https://link-mediafire.github.io/download-/index2.html');
                     btnBloqueio.html('<i class="fas fa-unlock"></i><span>SENHA LIBERADO</span>');
                 }, 500);
             }
